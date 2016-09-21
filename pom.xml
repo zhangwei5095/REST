@@ -1,154 +1,24 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>org</groupId>
-	<artifactId>rest-parent</artifactId>
-	<version>0.12-SNAPSHOT</version>
+
+	<groupId>org.baeldung</groupId>
+	<artifactId>user-management-parent</artifactId>
+	<version>1.0.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
-	<name>rest-security</name>
-	<url>https://github.com/eugenp/REST</url>
-	<description>REST Security is a Proof of Concept implementation of a RESTful Service with Spring</description>
 
-	<build>
+	<name>user-management-parent</name>
+	<url>https://github.com/eugenp/restwithspring</url>
+	<description>REST with Spring Classes</description>
 
-		<plugins>
-
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-surefire-plugin</artifactId>
-			</plugin>
-
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-			</plugin>
-
-		</plugins>
-
-		<pluginManagement>
-			<plugins>
-
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-surefire-plugin</artifactId>
-					<version>${maven-surefire-plugin.version}</version>
-				</plugin>
-
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-compiler-plugin</artifactId>
-					<version>${maven-compiler-plugin.version}</version>
-					<configuration>
-						<source>1.7</source>
-						<target>1.7</target>
-						<compilerArgument>-proc:none</compilerArgument>
-					</configuration>
-				</plugin>
-
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-resources-plugin</artifactId>
-					<version>${maven-resources-plugin.version}</version>
-				</plugin>
-
-			</plugins>
-		</pluginManagement>
-
-	</build>
-
-	<properties>
-
-		<!-- Spring related -->
-		<spring.version>4.0.4.RELEASE</spring.version>
-		<spring-security.version>3.2.3.RELEASE</spring-security.version>
-		<javassist.version>3.18.1-GA</javassist.version>
-		<aspectjweaver.version>1.8.0</aspectjweaver.version>
-
-		<!-- web -->
-		<javax.servlet-api.version>3.0.1</javax.servlet-api.version>
-
-		<!-- marshalling -->
-		<jackson.version>2.2.3</jackson.version>
-		<jaxb-api.version>2.2.11</jaxb-api.version>
-		<xstream.version>1.4.7</xstream.version>
-
-		<!-- commons and utils -->
-		<commons-lang3.version>3.3.2</commons-lang3.version>
-		<guava.version>17.0</guava.version>
-
-		<!-- UNSORTED -->
-		<commons-codec.version>1.9</commons-codec.version>
-
-		<!-- persistence -->
-		<mysql-connector-java.version>5.1.30</mysql-connector-java.version> <!-- latest version on: 06.05.2014 - http://dev.mysql.com/downloads/connector/j/ -->
-		<hibernate.version>4.3.0.Final</hibernate.version>
-		<hibernate-jpamodelgen.version>4.3.5.Final</hibernate-jpamodelgen.version>
-		<commons-dbcp.version>1.4</commons-dbcp.version>
-		<querydsl.version>3.3.3</querydsl.version>
-		<spring-data-jpa.version>1.5.2.RELEASE</spring-data-jpa.version>
-
-		<h2.version>1.4.178</h2.version>
-		<hsqldb.version>2.3.2</hsqldb.version>
-
-		<validation-api.version>1.1.0.Final</validation-api.version>
-		<hibernate-validator.version>5.1.1.Final</hibernate-validator.version>
-
-		<!-- logging -->
-		<org.slf4j.version>1.7.7</org.slf4j.version>
-		<logback.version>1.1.2</logback.version>
-
-		<!-- testing -->
-		<org.hamcrest.version>1.3</org.hamcrest.version>
-		<junit.version>4.11</junit.version>
-		<mockito.version>1.9.5</mockito.version>
-
-		<httpcore.version>4.3.2</httpcore.version>
-		<httpclient.version>4.3.3</httpclient.version>
-
-		<rest-assured.version>2.3.1</rest-assured.version>
-
-		<!-- maven plugins -->
-		<maven-surefire-plugin.version>2.17</maven-surefire-plugin.version>
-		<maven-compiler-plugin.version>3.1</maven-compiler-plugin.version>
-		<maven-resources-plugin.version>2.6</maven-resources-plugin.version>
-		<jrebel-maven-plugin.version>1.1.5</jrebel-maven-plugin.version>
-		<cargo-maven2-plugin.version>1.4.8</cargo-maven2-plugin.version>
-
-	</properties>
-
-	<repositories>
-
-		<repository>
-			<id>apache-snapshot</id>
-			<name>Apache Maven Snapshot Repository</name>
-			<url>https://repository.apache.org/content/groups/snapshots/</url>
-			<snapshots>
-				<enabled>true</enabled>
-			</snapshots>
-		</repository>
-
-		<repository>
-			<id>repository.springsource.milestone</id>
-			<name>SpringSource Milestone Repository</name>
-			<url>http://repo.springsource.org/milestone</url>
-		</repository>
-
-	</repositories>
-
-	<modules>
-		<module>common-client</module>
-		
-		<module>common</module>
-		<module>test</module>
-
-		<module>api</module>
-
-		<module>sec</module>
-
-	</modules>
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>1.3.2.RELEASE</version>
+		<relativePath /> <!-- lookup parent from repository -->
+	</parent>
 
 	<issueManagement>
-		<url>https://github.com/eugenp/REST/issues</url>
+		<url>https://github.com/eugenp/restwithspring/issues</url>
 		<system>GitHub Issues</system>
 	</issueManagement>
 
@@ -175,9 +45,144 @@
 	</ciManagement>
 
 	<scm>
-		<connection>scm:git:git://github.com/eugenp/REST.git</connection>
-		<url>scm:git:git://github.com/eugenp/REST.git</url>
-		<developerConnection>scm:git:git://github.com/eugenp/REST.git</developerConnection>
+		<connection>scm:git:git://github.com/eugenp/restwithspring.git</connection>
+		<url>scm:git:git://github.com/eugenp/restwithspring.git</url>
+		<developerConnection>scm:git:git://github.com/eugenp/restwithspring.git</developerConnection>
 	</scm>
+
+	<build>
+
+		<plugins>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+			</plugin>
+
+		</plugins>
+
+		<pluginManagement>
+			<plugins>
+
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-surefire-plugin</artifactId>
+					<version>${maven-surefire-plugin.version}</version>
+					<configuration>
+						<testFailureIgnore>true</testFailureIgnore>
+						<excludes>
+							<exclude>**/*IntegrationTest.java</exclude>
+							<exclude>**/*LiveTest.java</exclude>
+						</excludes>
+					</configuration>
+				</plugin>
+
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>${maven-compiler-plugin.version}</version>
+					<configuration>
+						<source>1.8</source>
+						<target>1.8</target>
+						<compilerArgument>-proc:none</compilerArgument>
+					</configuration>
+				</plugin>
+
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-resources-plugin</artifactId>
+					<version>${maven-resources-plugin.version}</version>
+				</plugin>
+
+			</plugins>
+		</pluginManagement>
+
+	</build>
+
+	<properties>
+		
+		<!-- non-dependencies -->
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<java.version>1.8</java.version>
+		
+		<!-- overriding Spring Boot -->
+		<spring-hateoas.version>0.18.0.RELEASE</spring-hateoas.version>
+		<spring-boot.version>1.3.2.RELEASE</spring-boot.version>
+
+		<commons-collections.version>3.2.1</commons-collections.version>
+		<hibernate.version>5.0.5.Final</hibernate.version>
+		<hibernate-validator.version>5.2.2.Final</hibernate-validator.version>
+		<httpclient.version>4.5.1</httpclient.version>
+		<jackson.version>2.6.3</jackson.version>
+		<javassist.version>3.20.0-GA</javassist.version>
+		<mysql.version>5.1.38</mysql.version>
+		
+		<slf4j.version>1.7.13</slf4j.version>
+
+		<spring.version>4.2.3.RELEASE</spring.version>
+		<spring-security.version>4.0.3.RELEASE</spring-security.version>
+
+		<!-- Spring related -->
+		<aspectjweaver.version>1.8.7</aspectjweaver.version>
+
+		<!-- web -->
+		<javax.servlet-api.version>3.1.0</javax.servlet-api.version>
+
+		<!-- marshalling -->
+		<jaxb-api.version>2.2.12</jaxb-api.version>
+
+		<!-- commons and utils -->
+		<commons-lang3.version>3.4</commons-lang3.version>
+		<guava.version>18.0</guava.version>
+
+		<!-- UNSORTED -->
+		<commons-codec.version>1.10</commons-codec.version>
+
+		<!-- persistence -->
+		<hibernate-jpamodelgen.version>5.0.5.Final</hibernate-jpamodelgen.version>
+		<querydsl.version>4.0.7</querydsl.version>
+		<spring-data-jpa.version>1.9.2.RELEASE</spring-data-jpa.version>
+
+		<h2.version>1.4.190</h2.version>
+		<hsqldb.version>2.3.3</hsqldb.version>
+
+		<validation-api.version>1.1.0.Final</validation-api.version>
+
+		<!-- ops related -->
+		<tomcat.version>8.0.30</tomcat.version>
+
+		<!-- logging -->
+		<logback.version>1.1.3</logback.version>
+
+		<!-- testing -->
+		<org.hamcrest.version>1.3</org.hamcrest.version>
+		<junit.version>4.12</junit.version>
+		<mockito.version>1.10.19</mockito.version>
+
+		<httpcore.version>4.4.4</httpcore.version>
+		<rest-assured.version>2.7.0</rest-assured.version>
+
+		<!-- maven plugins -->
+		<maven-surefire-plugin.version>2.19.1</maven-surefire-plugin.version>
+		<maven-compiler-plugin.version>3.3</maven-compiler-plugin.version>
+		<maven-resources-plugin.version>2.7</maven-resources-plugin.version>
+		<cargo-maven2-plugin.version>1.4.16</cargo-maven2-plugin.version>
+		<maven-war-plugin.version>2.6</maven-war-plugin.version>
+
+	</properties>
+
+	<modules>
+		<module>common-client</module>
+		<module>common</module>
+		<module>common-test</module>
+
+		<module>um-client</module>
+		<module>um-webapp</module>
+	</modules>
 
 </project>
